@@ -15,8 +15,7 @@ For the standard game, there are five boats:
 2 boats of length 3
 and 1 boat of length 2
 
-https://github.com/jtwool
-http://www.jtwolohan.com
+Licensed under GNU GPL v3.0
 """
 import time, logging, random
 
