@@ -1,4 +1,4 @@
-"""Test strategies for winning the game of battleship.
+"""A script to test strategies for the game of battleship.
 
 An naive strategy -- random_shot() -- is provided.
 
@@ -16,7 +16,6 @@ For the standard game, there are five boats:
 and 1 boat of length 2
 
 https://github.com/jtwool
-<jwolohan@gmail.com>
 http://www.jtwolohan.com
 """
 import time, logging, random
