@@ -29,4 +29,4 @@ If you report your high scores (avg. shots and time per 1k runs),
 and send in the code for your strategy, I'll post the results here.
 
 ### License
-Licensed under GNU GPL v3.0
+Licensed under [GNU GPL v3.0](./gpl-3.0.txt)
