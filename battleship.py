@@ -137,15 +137,7 @@ def pprint_battleship(game):
         print("".join(map(str, row)))
 
 if __name__ == "__main__":
-
-    logging.basicConfig(filename="battleship.log", level=logging.DEBUG)
-
-    def random_shot(board):
-        while True:
-            x = random.randint(0,9)
-            y = random.randint(0,9)
-            if board[x][y] not in ["X","-"]:
-                return x,y
+    logging.basicConfig(filename="battleship.log", level=logging.INFO)
+    from strategies.random_shot import random_shot
         
-
     summarize_games(play_battleship(random_shot, rounds=1000))

@@ -7,7 +7,7 @@ A script to test strategies for the game of battleship.
 
 Strategy | Avg. Shots | Avg. Duration
 ---------|------------|---------------
-Random | 95 | .004s
+[Random](./strategies/random_shot.py) | 95 | .004s
 
 
 ### Description
