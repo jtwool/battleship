@@ -1,5 +1,3 @@
-from random import randint
-
 def horizontal_sweep(board):
     for x,row in enumerate(board):
         for y,space in enumerate(row):
