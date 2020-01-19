@@ -139,5 +139,9 @@ def pprint_battleship(game):
 if __name__ == "__main__":
     logging.basicConfig(filename="battleship.log", level=logging.INFO)
     from strategies.random_shot import random_shot
-        
+    from strategies.horizontal_sweep import horizontal_sweep
+    
+    print("Random Shot")
     summarize_games(play_battleship(random_shot, rounds=1000))
+    print("Horizontal Sweep")
+    summarize_games(play_battleship(horizontal_sweep, rounds=1000))

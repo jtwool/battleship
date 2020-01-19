@@ -7,6 +7,7 @@ A script to test strategies for the game of battleship.
 
 Strategy | Avg. Shots | Avg. Duration
 ---------|------------|---------------
+[Horizontal Sweep](./strategies/horizontal_sweep.py) | 89 | .004s
 [Random](./strategies/random_shot.py) | 95 | .004s
 
 
