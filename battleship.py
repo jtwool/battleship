@@ -95,7 +95,7 @@ def game_not_over(game_state, boats):
     """Check if any boats remain on the game board."""
     for row in game_state["board"]:
         for spot in row:
-            if spot in [2,3,4,5]:
+            if spot in boats:
                 return True
     return False
 
