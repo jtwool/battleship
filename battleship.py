@@ -17,7 +17,7 @@ and 1 boat of length 2
 
 Licensed under GNU GPL v3.0
 """
-import time, logging, random
+import time, logging, random, json
 
 def new_board(n=10, boats=[5,4,3,3,2], empty=False):
     """Creates an n x n battleship board."""
@@ -111,6 +111,14 @@ def summarize_games(game_results):
     print("Shots: {:>3}, {:>3.0f}, {:>3}".format(*min_avg_max(all_shots)))
     print("Times: {:>3.3f}, {:>3.3f}, {:>3.3f}".format(*min_avg_max(all_times)))
 
+def ai_logging(state):
+    if LOG_FOR_AI:
+        shot_num = state['shots']
+        logging.log(25, "shot {}:tracking_board:\t{}".format(shot_num, 
+                                                            json.dumps(state['tracking_board'])))
+        logging.log(25, "shot {}:true_board:\t{}".format(shot_num, 
+                                                            json.dumps(state['board'])))
+
 def play_battleship(shoot_function, boats=[5,4,3,3,2], size=10, rounds=1):
     """Play the game of battleship."""
     def play():
@@ -122,6 +130,7 @@ def play_battleship(shoot_function, boats=[5,4,3,3,2], size=10, rounds=1):
             "start_time": time.time(),
         }
         while game_not_over(game_state, boats):
+            ai_logging(game_state)
             game_state = take_a_shot(shoot_function, game_state)
         game_state['end_time'] = time.time()
         game_state['duration'] = game_state['end_time'] - game_state['start_time']
@@ -137,7 +146,7 @@ def pprint_battleship(game):
         print("".join(map(str, row)))
 
 if __name__ == "__main__":
-    logging.basicConfig(filename="battleship.log", level=logging.INFO)
+    logging.basicConfig(filename="battleship.log", level=info.ERROR)
     from strategies.random_shot import random_shot
     from strategies.horizontal_sweep import horizontal_sweep
     
