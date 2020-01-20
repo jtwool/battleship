@@ -59,5 +59,17 @@ An example script is provided for reference: [standalone.py](strategies/standalo
 
 **NB**: Functions in languages other than Python will take longer to run because of system overhead.
 
+## Designing shoot functions with AI
+
+I've set up logging for the script to support training AI. If you'd like to use the system logs to
+train AI, you can set the logging level to 24.
+
+```python
+if __name__ == "__main__":
+    logging.basicConfig(filename="battleship.log", level=24)
+```
+
+You can also modify the output as you desire to produce logs in any format you please.
+
 ## License
 Licensed under [GNU GPL v3.0](./license.txt)
