@@ -113,9 +113,8 @@ def summarize_games(game_results):
 
 def ai_logging(state):
     shot_num = state['shots']
-    logging.log(25, "shot {}:tracking_board:\t{}".format(shot_num, 
-                                                        json.dumps(state['tracking_board'])))
-    logging.log(25, "shot {}:true_board:\t{}".format(shot_num, 
+    logging.log(25, "shot {}:game state:{}:{}".format(shot_num, 
+                                                        json.dumps(state['tracking_board']),
                                                         json.dumps(state['board'])))
 
 def play_battleship(shoot_function, boats=[5,4,3,3,2], size=10, rounds=1):
@@ -145,7 +144,8 @@ def pprint_battleship(game):
         print("".join(map(str, row)))
 
 if __name__ == "__main__":
-    logging.basicConfig(filename="battleship.log", level=50)
+    random.seed("test-seed")
+    logging.basicConfig(filename="battleship.log", level=40)
     from strategies.random_shot import random_shot
     from strategies.horizontal_sweep import horizontal_sweep
     
